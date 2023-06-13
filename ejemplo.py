@@ -18,7 +18,7 @@ uploaded_file = st.file_uploader("Upload Excel file",type='xlsx')
 # Check if a file was uploaded
 if uploaded_file is not None:
     # Read the Excel file data into a DataFrame
-    df = pd.read_excel(uploaded_file)
+    df = pd.read_excel(uploaded_file,engine='openpyxl')
 
 
 st.dataframe(df)
