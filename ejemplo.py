@@ -20,9 +20,9 @@ uploaded_file = st.file_uploader("Upload Excel file",type='xlsx')
 if uploaded_file is not None:
     # Read the Excel file data into a DataFrame
     df = pd.read_excel(uploaded_file,engine='openpyxl')
+    st.dataframe(df)
 
 
-st.dataframe(df)
 
 
 x = st.slider('x')  # 👈 this is a widget
