@@ -6,6 +6,7 @@ Here's our first attempt at using data to create a table:
 import streamlit as st
 import numpy as np
 import pandas as pd
+import openpyxl
 
 st.write("<h1 style='text-align: center;'>Stream IA project</h1>", unsafe_allow_html=True)
 url = "Imagen.png"
