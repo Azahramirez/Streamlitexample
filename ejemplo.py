@@ -8,8 +8,9 @@ import numpy as np
 import pandas as pd
 import openpyxl
 
+
 st.write("<h1 style='text-align: center;'>Stream IA project</h1>", unsafe_allow_html=True)
-url = "W2/Imagen.png"
+url = "Imagen.png"
 st.image(url, caption='Logo del equipo')
 st.write("<h2 style='text-align: left;'>Ranking mejores OSF</h2>", unsafe_allow_html=True)
 
@@ -21,7 +22,6 @@ if uploaded_file is not None:
     # Read the Excel file data into a DataFrame
     df = pd.read_excel(uploaded_file,engine='openpyxl')
     st.dataframe(df)
-
 
 
 
