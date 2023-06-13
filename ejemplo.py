@@ -8,10 +8,10 @@ import numpy as np
 import pandas as pd
 
 st.write("<h1 style='text-align: center;'>Stream IA project</h1>", unsafe_allow_html=True)
-url = "imagen.png"
+url = "Streamlitexample/imagen.png"
 st.image(url, caption='Logo del equipo')
 st.write("<h2 style='text-align: left;'>Ranking mejores OSF</h2>", unsafe_allow_html=True)
-dataframe = pd.read_excel("RankingFranco.xlsx")
+dataframe = pd.read_excel("Streamlitexample/RankingFranco.xlsx")
 
 
 st.dataframe(dataframe)
