@@ -6,15 +6,24 @@ Here's our first attempt at using data to create a table:
 import streamlit as st
 import numpy as np
 import pandas as pd
+import openpyxl
 
 st.write("<h1 style='text-align: center;'>Stream IA project</h1>", unsafe_allow_html=True)
-url = "W2/imagen.png"
+url = "W2/Imagen.png"
 st.image(url, caption='Logo del equipo')
 st.write("<h2 style='text-align: left;'>Ranking mejores OSF</h2>", unsafe_allow_html=True)
-dataframe = pd.read_excel("W2/RankingFranco.xlsx")
+
+# Upload the Excel file from the repository
+uploaded_file = st.file_uploader("Upload Excel file",type='xlsx')
+
+# Check if a file was uploaded
+if uploaded_file is not None:
+    # Read the Excel file data into a DataFrame
+    df = pd.read_excel(uploaded_file,engine='openpyxl')
+    st.dataframe(df)
 
 
-st.dataframe(dataframe)
+
 
 
 x = st.slider('x')  # 👈 this is a widget
