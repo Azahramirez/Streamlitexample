@@ -13,7 +13,7 @@ st.image(url, caption='Logo del equipo')
 st.write("<h2 style='text-align: left;'>Ranking mejores OSF</h2>", unsafe_allow_html=True)
 
 # Upload the Excel file from the repository
-uploaded_file = st.file_uploader("Upload Excel file")
+uploaded_file = st.file_uploader("Upload Excel file",type='xlsx')
 
 # Check if a file was uploaded
 if uploaded_file is not None:
