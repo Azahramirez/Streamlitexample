@@ -8,7 +8,6 @@ import numpy as np
 import pandas as pd
 
 
-
 st.set_page_config(
      page_title='Streamlit cheat sheet',
      layout="wide",
@@ -66,9 +65,11 @@ def cs_body():
         'Métrica (promedio) a visualizar',
         ("sentimiento","sentimiento2","P1.1","P1.2","P1.3","P1.4","P1.5"))
     
-    df = pd.read_csv("DatosFinales.csv", encoding='utf-8')
+    df = pd.read_csv("W2/DatosFinales.csv", encoding='utf-8')
     ranking = pd.read_csv("RankingFranco.csv", encoding='utf-8').drop(columns=["Unnamed: 0"],axis=1)
     ranking.index=ranking.index+1
+    rankingM = pd.read_excel("RankingMalo.xlsx",engine='openpyxl').drop(columns=["Unnamed: 0"],axis=1)
+    rankingM.index=rankingM.index+359
 
     col1, col2, col3 = st.columns(3)
 
@@ -154,26 +155,47 @@ def cs_body():
 
 
 
+
     
 
-    st.write("<h2 style='text-align: left;'>Ranking mejores OSF general</h2>", unsafe_allow_html=True)
+    st.write("<h2 style='text-align: center;'>Ranking mejores OSF general (regresión lineal)</h2>", unsafe_allow_html=True)
 
+    col1, col2 = st.columns(2)
 
-    st.table(ranking)
+    col1.table(ranking)
 
-    option2 = st.selectbox(
+    option2 = col2.selectbox(
         'Mostrar resumen de comentarios',
-        ("1","2","3","4","5","6","7"))
+        ("1","2","3","4","5","6","7","8","9","10"))
 
     option2=int(option2)
 
-    if option2==1:
-        url2 = "output.png"
-        cp= ("Palabras más comunes en OSF ", option2)
 
-    st.image(url2, caption=cp)
+    direccion=("Nube"+str(option2-1)+".png")
+    url2 = direccion
+    cp= ('Palabras más comunes en OSF: '+ ranking["OSF"][option2])
+
+    col2.image(url2, caption=cp)
+
+    st.write("<h2 style='text-align: center;'>Ranking peores OSF general (regresión lineal)</h2>", unsafe_allow_html=True)
+
+    col1, col2 = st.columns(2)
+
+    col1.table(rankingM)
+
+    option2 = col2.selectbox(
+        'Mostrar resumen de comentarios malos',
+        ("1","2","3","4","5","6","7","8","9","10"))
+
+    option2=int(option2)
+
+
+    direccion=("Mube"+str(option2-1)+".png")
+    url2 = direccion
+    cp= ('Palabras más comunes en OSF: '+ rankingM["OSF"][option2+359])
+
+    col2.image(url2, caption=cp)
 
 
 if __name__ == '__main__':
     main()
-
