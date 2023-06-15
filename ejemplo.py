@@ -68,7 +68,7 @@ def cs_body():
     df = pd.read_csv("DatosFinales.csv", encoding='utf-8')
     ranking = pd.read_csv("RankingFranco.csv", encoding='utf-8').drop(columns=["Unnamed: 0"],axis=1)
     ranking.index=ranking.index+1
-    rankingM = pd.read_excel("RankingMalo.xlsx",engine='openpyxl').drop(columns=["Unnamed: 0"],axis=1)
+    rankingM = pd.read_csv("RankingMalo.csv", encoding='utf-8').drop(columns=["Unnamed: 0"],axis=1)
     rankingM.index=rankingM.index+359
 
     col1, col2, col3 = st.columns(3)
