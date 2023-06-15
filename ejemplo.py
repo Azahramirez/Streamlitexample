@@ -65,7 +65,7 @@ def cs_body():
         'Métrica (promedio) a visualizar',
         ("sentimiento","sentimiento2","P1.1","P1.2","P1.3","P1.4","P1.5"))
     
-    df = pd.read_csv("W2/DatosFinales.csv", encoding='utf-8')
+    df = pd.read_csv("DatosFinales.csv", encoding='utf-8')
     ranking = pd.read_csv("RankingFranco.csv", encoding='utf-8').drop(columns=["Unnamed: 0"],axis=1)
     ranking.index=ranking.index+1
     rankingM = pd.read_excel("RankingMalo.xlsx",engine='openpyxl').drop(columns=["Unnamed: 0"],axis=1)
