@@ -265,7 +265,7 @@ def cs_body():
         'Grupo de la muestra1',
         ("0","1","2"))
     muestra,p,com,OSF,val,delt,deltax = encontrar(cluster1)
-    col1.metric(label="Satisfacción predecida", value=val, delta=deltax ,delta_color="off")
+    col1.metric(label="Satisfacción predicha", value=val, delta=deltax ,delta_color="off")
     col1.write("Comentario centroide del grupo:")
     col1.text(com, help=("Comentario de OSF centroide: "+OSF))
     pri,prit=mostrarGrupo(int(cluster1))
@@ -279,7 +279,7 @@ def cs_body():
         'Grupo de la muestra2',
         ("0","1","2"))
     muestra,p,com,OSF,val,delt,deltax = encontrar(cluster2)
-    col2.metric(label="Satisfacción predecida", value=val, delta=deltax ,delta_color="off")
+    col2.metric(label="Satisfacción predicha", value=val, delta=deltax ,delta_color="off")
     col2.write("Comentario centroide del grupo:")
     col2.text(com, help=("Comentario de OSF centroide: "+OSF))
     pri,prit=mostrarGrupo(int(cluster2))
@@ -293,7 +293,7 @@ def cs_body():
         'Grupo de la muestra3',
         ("0","1","2"))
     muestra,p,com,OSF,val,delt,deltax = encontrar(cluster3)
-    col3.metric(label="Satisfacción predecida", value=val, delta=deltax ,delta_color="off")
+    col3.metric(label="Satisfacción predicha", value=val, delta=deltax ,delta_color="off")
     col3.write("Comentario centroide del grupo:")
     col3.text(com, help=("Comentario de OSF centroide: "+OSF))
     pri,prit=mostrarGrupo(int(cluster3))
